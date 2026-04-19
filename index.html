@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharvary Datarkar Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(135deg,#0F172A,#020617);
+  color:white;
+}
+
+/* BLOBS */
+.blob{
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:linear-gradient(45deg,#8B5CF6,#22D3EE);
+  border-radius:50%;
+  filter:blur(140px);
+  opacity:0.25; /* VERY IMPORTANT */
+  z-index:0;
+}
+.blob:nth-child(1){ top:10%; left:5%; }
+.blob:nth-child(2){ bottom:10%; right:5%; }
+
+@keyframes move{
+  0%{ transform:translateY(0);}
+  100%{ transform:translateY(60px);}
+}
+section, nav, .hero{
+  position:relative;
+  z-index:1;
+}
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:rgba(15,23,42,0.7);
+  backdrop-filter:blur(10px);
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+
+nav h2{ color:#8B5CF6; }
+
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:#22D3EE;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:100px 8%;
+  gap:50px;
+}
+
+.hero h1{
+  font-size:42px;
+  background:linear-gradient(to right,#8B5CF6,#22D3EE);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero img{
+  width:280px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(139,92,246,0.4);
+}
+.hero-img-wrapper{
+  position:relative;
+  display:inline-block;
+}
+
+.hero-img-wrapper::before{
+  content:"";
+  position:absolute;
+  top:-20px;
+  left:-20px;
+  width:100%;
+  height:100%;
+  background:linear-gradient(45deg,#8B5CF6,#22D3EE);
+  filter:blur(60px);
+  opacity:0.6;
+  z-index:0;
+  border-radius:30px;
+}
+/* HOVER EFFECT */
+.hero img:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:
+    0 0 30px rgba(139,92,246,0.8),
+    0 0 80px rgba(139,92,246,0.6),
+    0 0 120px rgba(34,211,238,0.5);
+}
+.btn{
+  margin-top:15px;
+  padding:12px 25px;
+  border:none;
+  background:#8B5CF6;
+  color:white;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#22D3EE;
+}
+
+/* SECTION */
+section{
+  padding:80px 8%;
+}
+
+h2{
+  color:#22D3EE;
+  margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(30,41,59,0.6);
+  backdrop-filter:blur(10px);
+  padding:20px;
+  border-radius:20px;
+  margin:10px 0;
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* GRID */
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.grid .card{
+  flex:1 1 250px;
+  margin:10px;
+}
+
+/* TIMELINE */
+.timeline{
+  border-left:2px solid #8B5CF6;
+  padding-left:20px;
+}
+
+.timeline div{
+  margin-bottom:15px;
+}
+
+/* CONTACT */
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+  background:#1E293B;
+  color:white;
+}
+@keyframes float{
+  0%{ transform:translateY(0); }
+  100%{ transform:translateY(-15px); }
+}
+
+.hero img{
+  animation:float 3s ease-in-out infinite alternate;
+}
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#1E293B;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="blob"></div>
+<div class="blob"></div>
+
+<nav>
+  <h2>Sharvary</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#interests">Interests</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Sharvary Datarkar</h1>
+    <p>Electronics & Telecommunication Engineering Student | Creative Thinker | Problem Solver</p>
+    <p>I am a First-Year B.Tech ENTC student passionate about building practical solutions and expressing creativity through design and innovation.</p>
+    <button class="btn">View My Work</button>
+  </div>
+ <div class="hero-img-wrapper">
+  <img src="profile.jpg" alt="profile">
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    I am currently pursuing my B.Tech in Electronics and Telecommunication Engineering at MIT Academy of Engineering, Alandi, Pune. I completed my 12th from Global Public School and Junior College, Nashik, and secured 93.73 percentile in MHT CET. I enjoy working on hands-on projects and have a strong interest in creative design and art. I believe in combining technical knowledge with creativity to build meaningful solutions.
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div>B.Tech (ENTC) – MIT Academy of Engineering, Alandi, Pune (First Year)</div>
+    <div>12th (HSC) – Global Public School and Junior College, Nashik</div>
+    <div>School – Vidya Prabodhini Prashala, Nashik</div>
+    <div>MHT CET 2025 Percentile: 93.73</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML, CSS, JavaScript (basic)</div>
+    <div class="card">Python (fundamentals)</div>
+    <div class="card">Electronics & Circuit Design</div>
+    <div class="card">VS Code, GitHub, Tinkercad</div>
+    <div class="card">Creativity, Problem Solving, Teamwork</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card"><b>Hand Sanitizer Dispenser</b><br>A practical device designed for contactless sanitization using simple electronics and automation.</div>
+    <div class="card"><b>Smart Foldable Table (Wall Decor)</b><br>A space-saving foldable table that doubles as aesthetic wall decor, combining functionality and design.</div>
+    <div class="card"><b>Electric Vehicle Solution for Women Farmers</b><br>A conceptual EV-based solution aimed at improving mobility and efficiency for rural women farmers.</div>
+    <div class="card"><b>Posture Correction Device</b><br>A wearable system using sensors to detect incorrect posture and alert the user.</div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <h2>Achievements</h2>
+  <div class="grid">
+    <div class="card">Secured 93.73 percentile in MHT CET</div>
+    <div class="card">AIR 9 in Kshitij Aeromodelling Competition (Team of 3)</div>
+    <div class="card">NASSCOM Certification</div>
+    <div class="card">Cisco Python Essentials Certificate</div>
+    <div class="card">Anthropic Certificate</div>
+    <div class="card">Silver Medal in Mathematics Olympiad</div>
+    <div class="card">Winner of multiple Art Competitions</div>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests">
+  <h2>Interests</h2>
+  <div class="grid">
+    <div class="card">Art & Creative Design</div>
+    <div class="card">Electronics Projects</div>
+    <div class="card">Innovative Product Design</div>
+    <div class="card">Problem Solving</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: sharvarydatarkar293@gmail.com</p>
+  <p>Phone: 97306*****</p>
+
+  <form>
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button class="btn">Send</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Sharvary Datarkar | All Rights Reserved
+</footer>
+
+</body>
+</html>
